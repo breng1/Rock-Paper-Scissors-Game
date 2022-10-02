@@ -1,5 +1,13 @@
 // script.js
 
+// Randomly returns 'Rock', 'Paper', or 'Scissors'
+function getComputerChoice() {
+    let choices = ["Rock", "Paper", "Scissors"];
+    // Generate random number between 0 and 2
+    index = Math.floor(Math.random() * 3);
+    return choices[index];
+}
+
 // Plays five rounds of RPS, keeps track of score, and displays winner
 function game() {
     let playerScore = 0;
