@@ -35,6 +35,19 @@ function playRound(playerSelection, computerSelection) {
         }    
 }
 
+// Display results of a single game to the console
+function displayRound(result, playerSelection, computerSelection) {
+
+    if (result == 'win') {
+        console.log(`You Win! ${playerSelection} beats ${computerSelection}.`);
+    }   
+    else if (result == 'loss') {
+        console.log(`You Lose. ${computerSelection} beats ${playerSelection}.`);
+    } 
+    else if (result == 'tie') {
+        console.log(`It's a tie.`);
+    }
+}
 
 // Plays five rounds of RPS, keeps track of score, and displays winner
 function game() {
