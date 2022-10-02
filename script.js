@@ -8,6 +8,12 @@ function getComputerChoice() {
     return choices[index];
 }
 
+// Prompts user and returns choice in CamelCase
+function getPlayerChoice() {
+    let playerSelection = prompt("Enter 'Rock', 'Paper', or 'Scissors':");
+    return(playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase());
+}
+
 // Plays five rounds of RPS, keeps track of score, and displays winner
 function game() {
     let playerScore = 0;
