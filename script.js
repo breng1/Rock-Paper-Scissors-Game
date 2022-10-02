@@ -14,6 +14,28 @@ function getPlayerChoice() {
     return(playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase());
 }
 
+// Plays single round of Rock, Paper Scissors, returning the result ('tie', 'win' or 'loss')
+function playRound(playerSelection, computerSelection) {
+        // Compare player and computer selections
+        switch (true) {
+            case (playerSelection == computerSelection):
+                return 'tie';
+            case (playerSelection == "Rock" && computerSelection == "Scissors"):
+                return 'win';
+            case (playerSelection == "Rock" && computerSelection == "Paper"):
+                return 'loss';
+            case (playerSelection == "Paper" && computerSelection == "Rock"):
+                return 'win';
+            case (playerSelection == "Paper" && computerSelection == "Scissors"):
+                return 'loss';
+            case (playerSelection == "Scissors" && computerSelection == "Paper"):
+                return 'win';
+            case (playerSelection == "Scissors" && computerSelection == "Rock"):
+                return 'loss';
+        }    
+}
+
+
 // Plays five rounds of RPS, keeps track of score, and displays winner
 function game() {
     let playerScore = 0;
