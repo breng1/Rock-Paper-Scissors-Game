@@ -35,19 +35,6 @@ function playRound(playerSelection, computerSelection) {
         }    
 }
 
-// Display results of a single game to the console
-function displayRound(result, playerSelection, computerSelection) {
-
-    if (result == 'win') {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}.`);
-    }   
-    else if (result == 'loss') {
-        console.log(`You Lose. ${computerSelection} beats ${playerSelection}.`);
-    } 
-    else if (result == 'tie') {
-        console.log(`It's a tie.`);
-    }
-}
 
 // Plays five rounds of RPS, keeps track of score, and displays winner
 function game() {
@@ -56,11 +43,27 @@ function game() {
 
     // Play five rounds of RPS
     for (let i = 0; i < 5; i++) {
-        // Prompt user for input
-        // Generate commputer choice
-        // Play single round
-        // Update scores
+
+        // Play round
+        let playerSelection = getPlayerChoice();
+        let computerSelection = getComputerChoice();
+        let roundResult = playRound(playerSelection, computerSelection);
+        
+        // Update scores and display round results
+        if (roundResult == 'win') {
+            playerScore++;
+            console.log(`You Win! ${playerSelection} beats ${computerSelection}.`);
+        }   
+        else if (roundResult == 'loss') {
+            computerScore++;
+            console.log(`You Lose. ${computerSelection} beats ${playerSelection}.`);
+        } 
+        else if (roundResult == 'tie') {
+            console.log(`It's a tie.`);
+        }
+
         // Display current scores
+        console.log(`Your Score: ${playerScore}\t Computer Score: ${computerScore}`);
     }
 
     // Display final game results
