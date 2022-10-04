@@ -39,6 +39,9 @@ function playRound(playerSelection, computerSelection) {
 // Plays five rounds of RPS, keeps track of score, and displays winner
 function game() {
 
+    let playerScore = 0;
+    let computerScore = 0;
+
     // Play round
     let roundResult;
     let playerSelection;
@@ -47,19 +50,27 @@ function game() {
     const buttons = document.querySelectorAll('button');
     buttons.forEach(function(button){
         button.addEventListener('click', function(){
+            // Play Round
             computerSelection = getComputerChoice();
-            //console.log(`Computer choice: ${computerSelection}`);
+            console.log(`Computer choice: ${computerSelection}`);
             playerSelection = this.value;
-            //console.log(`Player choice: ${playerSelection}`);
+            console.log(`Player choice: ${playerSelection}`);
             roundResult = playRound(playerSelection, computerSelection);
-            //console.log(roundResult);
+            console.log(roundResult);
+
+            // Update Score
+            if (roundResult === 'win') {
+                playerScore++;
+            }   
+            else if (roundResult === 'loss') {
+                computerScore++;
+            } 
         })
     });
 
 
+
     /*
-    let playerScore = 0;
-    let computerScore = 0;
 
     // Play five rounds of RPS
     for (let i = 0; i < 5; i++) {
