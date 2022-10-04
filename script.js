@@ -38,6 +38,26 @@ function playRound(playerSelection, computerSelection) {
 
 // Plays five rounds of RPS, keeps track of score, and displays winner
 function game() {
+
+    // Play round
+    let roundResult;
+    let playerSelection;
+    let computerSelection;
+    
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button){
+        button.addEventListener('click', function(){
+            computerSelection = getComputerChoice();
+            //console.log(`Computer choice: ${computerSelection}`);
+            playerSelection = this.value;
+            //console.log(`Player choice: ${playerSelection}`);
+            roundResult = playRound(playerSelection, computerSelection);
+            //console.log(roundResult);
+        })
+    });
+
+
+    /*
     let playerScore = 0;
     let computerScore = 0;
 
@@ -76,4 +96,8 @@ function game() {
     else {
         console.log("Game Over. It's a tie!");
     }
+
+    */
 };
+
+game();
