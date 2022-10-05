@@ -47,19 +47,32 @@ function game() {
         button.addEventListener('click', function(){
             // Play Round
             let computerSelection = getComputerChoice();
-            //console.log(`Computer choice: ${computerSelection}`);
-            let playerSelection = this.value;
-            //console.log(`Player choice: ${playerSelection}`);
-            let roundResult = playRound(playerSelection, computerSelection);
-            //console.log(roundResult);
+            document.querySelector('.computer-choice').textContent = computerSelection;
 
-            // Update Score
+            let playerSelection = this.value;
+            document.querySelector('.player-choice').textContent = playerSelection;
+
+            let roundResult = playRound(playerSelection, computerSelection);
+
+            
+            // Update Score and define round result
+            let roundMessage;
+            
             if (roundResult === 'win') {
                 playerScore++;
+                roundMessage = `You Win! ${playerSelection} beats ${computerSelection}.`;
             }   
             else if (roundResult === 'loss') {
                 computerScore++;
+                roundMessage = `You Lose. ${computerSelection} beats ${playerSelection}.`;
+            }
+            else if (roundResult === 'tie') {
+                roundMessage = `It's a tie!`;
             } 
+
+            document.querySelector('.round-message').textContent = roundMessage;
+
+
             //console.log(`computer: ${computerScore} player: ${playerScore}`);
         })
     });
