@@ -57,7 +57,7 @@ function game() {
             
             // Update Score and define round result
             let roundMessage;
-            
+
             if (roundResult === 'win') {
                 playerScore++;
                 roundMessage = `You Win! ${playerSelection} beats ${computerSelection}.`;
@@ -70,10 +70,9 @@ function game() {
                 roundMessage = `It's a tie!`;
             } 
 
+            document.querySelector('.player-score').textContent = playerScore;
+            document.querySelector('.computer-score').textContent = computerScore;
             document.querySelector('.round-message').textContent = roundMessage;
-
-
-            //console.log(`computer: ${computerScore} player: ${playerScore}`);
         })
     });
 
