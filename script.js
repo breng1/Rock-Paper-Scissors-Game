@@ -8,12 +8,6 @@ function getComputerChoice() {
     return choices[index];
 }
 
-// Prompts user and returns choice in CamelCase
-function getPlayerChoice() {
-    let playerSelection = prompt("Enter 'Rock', 'Paper', or 'Scissors':");
-    return(playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase());
-}
-
 // Plays single round of Rock, Paper Scissors, returning the result ('tie', 'win' or 'loss')
 function playRound(playerSelection, computerSelection) {
     // Compare player and computer selections
