@@ -84,7 +84,7 @@ function game() {
             else if (playerScore === 5) {
                 document.querySelector('.game-message').textContent = "Game Over. You won!";
             }
-            else if (playerScore === 5) {
+            else if (computerScore === 5) {
                 document.querySelector('.game-message').textContent ="Game Over. You lost. :(";
             }
 
