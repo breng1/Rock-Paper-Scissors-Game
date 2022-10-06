@@ -50,7 +50,7 @@ function game() {
             if (playerScore === 5 || computerScore === 5) {
                 playerScore = 0;
                 computerScore = 0;
-                gameOverMessage = '';
+                document.querySelector('.game-message').textContent = '';
             }
 
             // Play Round
@@ -85,14 +85,16 @@ function game() {
 
             //Display gameover message 
             if (computerScore === 5 && playerScore === 5) {
-                alert("Game Over. It's a tie.")
+                document.querySelector('.game-message').textContent = "Game Over. It's a tie.";
             }
             else if (playerScore === 5) {
-                alert("Game Over.You won!")
+                document.querySelector('.game-message').textContent = "Game Over. You won!";
             }
             else if (playerScore === 5) {
-                alert ("Game Over. You lost. :(")
+                document.querySelector('.game-message').textContent ="Game Over. You lost. :(";
             }
+
+
         })
     });
 
