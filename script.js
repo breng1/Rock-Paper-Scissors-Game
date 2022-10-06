@@ -41,10 +41,18 @@ function game() {
     // Track running scores
     let playerScore = 0;
     let computerScore = 0;
+    let gameoverMessage = '';
    
     const buttons = document.querySelectorAll('button');
     buttons.forEach(function(button){
         button.addEventListener('click', function(){
+            // Reset game after game ends
+            if (playerScore === 5 || computerScore === 5) {
+                playerScore = 0;
+                computerScore = 0;
+                gameOverMessage = '';
+            }
+
             // Play Round
             let computerSelection = getComputerChoice();
             document.querySelector('.computer-choice').textContent = computerSelection;
@@ -55,7 +63,7 @@ function game() {
             let roundResult = playRound(playerSelection, computerSelection);
 
             
-            // Update Score and define round result
+            // Update score and round result
             let roundMessage;
 
             if (roundResult === 'win') {
@@ -70,9 +78,21 @@ function game() {
                 roundMessage = `It's a tie!`;
             } 
 
+            // Display score and round result
             document.querySelector('.player-score').textContent = playerScore;
             document.querySelector('.computer-score').textContent = computerScore;
             document.querySelector('.round-message').textContent = roundMessage;
+
+            //Display gameover message 
+            if (computerScore === 5 && playerScore === 5) {
+                alert("Game Over. It's a tie.")
+            }
+            else if (playerScore === 5) {
+                alert("Game Over.You won!")
+            }
+            else if (playerScore === 5) {
+                alert ("Game Over. You lost. :(")
+            }
         })
     });
 
