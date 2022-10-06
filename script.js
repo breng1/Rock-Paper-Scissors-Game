@@ -98,47 +98,6 @@ function game() {
         })
     });
 
-
-
-    /*
-
-    // Play five rounds of RPS
-    for (let i = 0; i < 5; i++) {
-
-        // Play round
-        let playerSelection = getPlayerChoice();
-        let computerSelection = getComputerChoice();
-        let roundResult = playRound(playerSelection, computerSelection);
-        
-        // Update scores and display round results
-        if (roundResult == 'win') {
-            playerScore++;
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}.`);
-        }   
-        else if (roundResult == 'loss') {
-            computerScore++;
-            console.log(`You Lose. ${computerSelection} beats ${playerSelection}.`);
-        } 
-        else if (roundResult == 'tie') {
-            console.log(`It's a tie.`);
-        }
-
-        // Display current scores
-        console.log(`Your Score: ${playerScore}\t Computer Score: ${computerScore}`);
-    }
-
-    // Display final game results
-    if (playerScore > computerScore) {
-        console.log("Game Over. You won!");
-    }
-    else if (computerScore > playerScore){
-        console.log("Game Over. You lost.");
-    }
-    else {
-        console.log("Game Over. It's a tie!");
-    }
-
-    */
 };
 
 game();
