@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-// Plays five rounds of RPS, keeps track of score, and displays winner
+// Play RPS until one player reaches five wins.
 function game() {
     // Track running scores
     let playerScore = 0;
@@ -78,10 +78,7 @@ function game() {
             document.querySelector('.round-message').textContent = roundMessage;
 
             //Display gameover message 
-            if (computerScore === 5 && playerScore === 5) {
-                document.querySelector('.game-message').textContent = "Game Over. It's a tie.";
-            }
-            else if (playerScore === 5) {
+            if (playerScore === 5) {
                 document.querySelector('.game-message').textContent = "Game Over. You won!";
             }
             else if (computerScore === 5) {
